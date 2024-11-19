@@ -17,8 +17,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
-// Admin dashboard
-
+// admin dashboard
 // Route::get('/admin/dashboard', function () {
 //     return view('backend.admin_dashboard');
 // })->middleware(['auth:admin',])->name('admin_dashboard');
@@ -35,11 +34,12 @@ Route::middleware('auth')->group(function () {
 
 require __DIR__.'/auth.php';
 
+// admin Routes
+
 Route::middleware('guest:admin')->prefix('admin')->group( function () {
 
     Route::get('login', [App\Http\Controllers\Auth\Admin\LoginController::class, 'login'])->name('admin.login');
     Route::post('login', [App\Http\Controllers\Auth\Admin\LoginController::class, 'check_user']);
-
 
 
 });
@@ -51,3 +51,22 @@ Route::middleware('auth:admin')->prefix('admin')->group( function () {
     Route::view('/dashboard','backend.admin_dashboard');
 
 });
+
+// Customer Routes
+
+Route::middleware('guest:customer')->prefix('customer')->group( function () {
+
+    Route::get('login', [App\Http\Controllers\Auth\Customer\LoginController::class, 'login'])->name('customer.login');
+    Route::post('login', [App\Http\Controllers\Auth\Customer\LoginController::class, 'check_user']);
+
+
+});
+
+Route::middleware('auth:customer')->prefix('customer')->group( function () {
+
+    Route::post('logout', [App\Http\Controllers\Auth\Customer\LoginController::class, 'logout'])->name('customer.logout');
+
+    Route::view('/dashboard','backend.customer_dashboard');
+
+});
+

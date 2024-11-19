@@ -25,8 +25,11 @@
     <div class="layout-wrapper">
 
         <!-- ========== Left Sidebar ========== -->
-
-        @include('backend.layouts.leftsidebar')
+        @if (Auth()->guard('admin')->check())
+         @include('backend.layouts.leftsidebar')
+         @elseif(Auth()->guard('customer')->check())
+         @include('backend.layouts.customer_leftsidebar')
+         @endif
 
 
         <!-- ============================================================== -->
@@ -36,7 +39,12 @@
         <div class="page-content">
 
             <!-- ========== Topbar Start ========== -->
-            @include('backend.layouts.topbar')
+            @if (Auth()->guard('admin')->check())
+         @include('backend.layouts.topbar')
+         @elseif(Auth()->guard('customer')->check())
+         @include('backend.layouts.customer_topbar')
+         @endif
+
             <!-- ========== Topbar End ========== -->
 
             <div class="px-3">
@@ -44,7 +52,8 @@
                 <!-- Start Content-->
 
                 @yield('content')
- <!-- content -->
+
+                   <!-- content -->
 
             <!-- Footer Start -->
             @include('backend.layouts.footer')
