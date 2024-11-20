@@ -21,9 +21,9 @@
                     <li class="menu-title">Menu</li>
 
                     <li class="menu-item">
-                        <a href="index.html" class="menu-link waves-effect waves-light">
+                        <a href="{{url('/admin/dashboard')}}" class="menu-link waves-effect waves-light">
                             <span class="menu-icon"><i class="bx bx-home-smile"></i></span>
-                            <span class="menu-text">User Dashboards </span>
+                            <span class="menu-text">tanim Dashboards  </span>
                             <span class="badge bg-primary rounded ms-auto">01</span>
                         </a>
                     </li>
@@ -33,16 +33,16 @@
 
 
                     <li class="menu-item">
-                        <a href="#menuExpages" data-bs-toggle="collapse" class="menu-link waves-effect waves-light">
+                        <a href="#" data-bs-toggle="collapse" class="menu-link waves-effect waves-light">
                             <span class="menu-icon"><i class="bx bx-file"></i></span>
-                            <span class="menu-text"> Ordering System </span>
+                            <span class="menu-text"> Specialoffer</span>
                             <span class="menu-arrow"></span>
                         </a>
                         <div class="collapse" id="menuExpages">
                             <ul class="sub-menu">
                                 <li class="menu-item">
-                                    <a href="pages-starter.html" class="menu-link">
-                                        <span class="menu-text">Order Approve List</span>
+                                    <a href="{{route('specialoffer.index')}}" class="menu-link">
+                                        <span class="menu-text">Specialoffer</span>
                                     </a>
                                 </li>
                                 <li class="menu-item">
