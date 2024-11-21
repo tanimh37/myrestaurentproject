@@ -33,15 +33,15 @@
 
 
                     <li class="menu-item">
-                        <a href="#" data-bs-toggle="collapse" class="menu-link waves-effect waves-light">
+                        <a href="{{route('specialoffer.index')}}"  class="menu-link waves-effect waves-light">
                             <span class="menu-icon"><i class="bx bx-file"></i></span>
-                            <span class="menu-text"> Specialoffer</span>
+                            <span class="menu-text"> SpecialofferTanim</span>
                             <span class="menu-arrow"></span>
                         </a>
                         <div class="collapse" id="menuExpages">
                             <ul class="sub-menu">
                                 <li class="menu-item">
-                                    <a href="{{route('specialoffer.index')}}" class="menu-link">
+                                    <a href="#" class="menu-link">
                                         <span class="menu-text">Specialoffer</span>
                                     </a>
                                 </li>

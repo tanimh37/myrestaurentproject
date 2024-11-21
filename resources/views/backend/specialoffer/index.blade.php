@@ -1,5 +1,5 @@
 @extends('backend.layouts.app')
-@extends('backend.layouts.app')
+
 
 @section('css')
 <!-- App favicon -->
