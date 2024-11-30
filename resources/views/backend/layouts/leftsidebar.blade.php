@@ -33,31 +33,22 @@
 
 
                     <li class="menu-item">
-                        <a href="{{route('specialoffer.index')}}"  class="menu-link waves-effect waves-light">
-                            <span class="menu-icon"><i class="bx bx-file"></i></span>
-                            <span class="menu-text"> SpecialofferTanim</span>
+                        <a href="#menuTables" data-bs-toggle="collapse" class="menu-link waves-effect waves-light">
+                            <span class="menu-icon"><i class="bx bx-table"></i></span>
+                            <span class="menu-text">Special Offer </span>
                             <span class="menu-arrow"></span>
                         </a>
-                        <div class="collapse" id="menuExpages">
+                        <div class="collapse" id="menuTables">
                             <ul class="sub-menu">
+
                                 <li class="menu-item">
-                                    <a href="#" class="menu-link">
-                                        <span class="menu-text">Specialoffer</span>
-                                    </a>
-                                </li>
-                                <li class="menu-item">
-                                    <a href="pages-invoice.html" class="menu-link">
-                                        <span class="menu-text">Order Cancel List</span>
-                                    </a>
-                                </li>
-                                <li class="menu-item">
-                                    <a href="pages-login.html" class="menu-link">
-                                        <span class="menu-text">All Order</span>
+                                    <a href="{{route('specialoffer.index')}}" class="menu-link">
+                                        <span class="menu-text">All Offer</span>
                                     </a>
                                 </li>
                                 <li class="menu-item">
                                     <a href="pages-register.html" class="menu-link">
-                                        <span class="menu-text">Pendding Order</span>
+                                        <span class="menu-text">Add New Offer</span>
                                     </a>
                                 </li>
 

@@ -64,6 +64,7 @@ class SpecialofferController extends Controller
      */
     public function destroy(SpecialOffer $specialOffer)
     {
-        //
+        $specialOffer->delete();
+        return redirect()->route('specialoffer.index')->with('msg', 'Delete Successfully' );
     }
 }

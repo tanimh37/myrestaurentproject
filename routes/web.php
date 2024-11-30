@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\backend\SpecialofferController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\ReservationController;
 use App\Models\SpecialOffer;
 use Illuminate\Support\Facades\Route;
 
@@ -52,6 +53,7 @@ Route::middleware('auth:admin')->prefix('admin')->group( function () {
 
     Route::view('/dashboard','backend.admin_dashboard');
     Route::resource('/specialoffer',SpecialofferController::class);
+    Route::resource('/reservation',ReservationController::class);
 
 });
 

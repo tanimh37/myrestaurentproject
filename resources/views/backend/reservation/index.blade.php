@@ -79,9 +79,14 @@
                     <table id="basic-datatable" class="table dt-responsive nowrap w-100">
                         <thead>
                             <tr>
-                                <th>Oder Id</th>
-                                <th>Food Item</th>
-                                <th>Details</th>
+                                <th>Id</th>
+                                <th>First Name</th>
+                                <th>Last Name</th>
+                                <th>Email</th>
+                                <th>Phone</th>
+                                <th>Date</th>
+                                <th>Res Table</th>
+                                <th>Guest Number</th>
                                 <th>Action</th>
 
 
@@ -90,17 +95,22 @@
 
                         <tbody>
 
-                            @foreach ($items as $item)
+                            @foreach ($reserves as $reserv)
                             <tr>
                                 <td>{{$loop->iteration}}</td>
-                                <td>{{$item->food_item}}</td>
-                                <td>{{$item->details}}</td>
+                                <td>{{$reserv->first_name}}</td>
+                                <td>{{$reserv->last_name}}</td>
+                                <td>{{$reserv->email}}</td>
+                                <td>{{$reserv->tel_number}}</td>
+                                <td>{{$reserv->res_date}}</td>
+                                <td>{{$reserv->table_id}}</td>
+                                <td>{{$reserv->guest_number}}</td>
                                 <td>
 
 
-                                    <form action="{{route('specialoffer.destroy',$item->id)}}" method="post">
-                                        <a href="{{route('specialoffer.show',$item->id)}}" class="btn btn-success">Show</a>
-                                        <a href="{{route('specialoffer.edit',$item->id)}}" class="btn btn-info">Edit</a>
+                                    <form action="{{route('reservation.destroy',$reserv->id)}}" method="post">
+                                        <a href="{{route('reservation.show',$reserv->id)}}" class="btn btn-success">Show</a>
+                                        <a href="{{route('reservation.edit',$reserv->id)}}" class="btn btn-info">Edit</a>
                                         @csrf
                                         @method('delete')
 
