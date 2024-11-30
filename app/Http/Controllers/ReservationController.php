@@ -62,7 +62,7 @@ class ReservationController extends Controller
      */
     public function show(Reservation $reservation)
     {
-        //
+        // return view('backend.reservation.show',compact('res'));
     }
 
     /**
@@ -70,7 +70,8 @@ class ReservationController extends Controller
      */
     public function edit(Reservation $reservation)
     {
-        //
+        $reserves = Reservation::all();
+        return view('backend.reservation.edit',compact('reserves'));
     }
 
     /**
@@ -78,7 +79,31 @@ class ReservationController extends Controller
      */
     public function update(Request $request, Reservation $reservation)
     {
-        //
+        $request->validate(
+            ['fname'=>'required | max:100',
+            'lname'=>'required | max:100',
+            'email'=>'required | max:50',
+            'phone'=>'required | max:20',
+            'date'=>'required ',
+            'table'=>'required ',
+            'guest'=>'required '
+        ]
+        );
+
+
+
+        $res =new Reservation;
+
+        $res->first_name = $request->fname;
+        $res->last_name = $request->lname;
+        $res->email = $request->email;
+        $res->tel_number = $request->phone;
+        $res->res_date = $request->date;
+        $res->table_id = $request->table;
+        $res->guest_number = $request->guest;
+
+        $res->update();
+        return redirect()->route('reservation.index')->with('msg', "Successfully Create");
     }
 
     /**
