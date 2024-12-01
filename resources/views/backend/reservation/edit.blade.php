@@ -55,49 +55,49 @@
                                             <div class="card-body">
                                                 <h4 class="header-title mb-3">Horizontal form</h4>
 
-                                                <form role="form" action="{{route('reservation.update', $reserves->id)}}" method="post">
+                                                <form role="form" action="{{route('reservation.update', $reservation->id)}}" method="post">
                                                     @csrf
                                                     @method('PUT')
                                                     <div class="row mb-3">
                                                         <label for="inputEmail3" class="col-sm-3 col-form-label">First name</label>
                                                         <div class="col-sm-9">
-                                                            <input type="text" name="fname" class="form-control" id="inputEmail3" placeholder="First name">
+                                                            <input type="text" name="fname" value="{{$reservation->first_name}}" class="form-control" id="inputEmail3" placeholder="First name">
                                                         </div>
                                                     </div>
                                                     <div class="row mb-3">
                                                         <label for="inputEmail3" class="col-sm-3 col-form-label">Last name</label>
                                                         <div class="col-sm-9">
-                                                            <input type="text" name="lname" class="form-control" id="inputEmail3" placeholder="last name">
+                                                            <input type="text" name="lname" value="{{$reservation->last_name}}"  class="form-control" id="inputEmail3" placeholder="last name">
                                                         </div>
                                                     </div>
                                                     <div class="row mb-3">
                                                         <label for="inputEmail3" class="col-sm-3 col-form-label">Email</label>
                                                         <div class="col-sm-9">
-                                                            <input type="email" name="email" class="form-control" id="inputEmail3" placeholder="Email">
+                                                            <input type="email" name="email" value="{{$reservation->email}}" class="form-control" id="inputEmail3" placeholder="Email">
                                                         </div>
                                                     </div>
                                                     <div class="row mb-3">
                                                         <label for="inputEmail3" class="col-sm-3 col-form-label">Phone</label>
                                                         <div class="col-sm-9">
-                                                            <input type="text" name="phone" class="form-control" id="inputEmail3" placeholder="phone">
+                                                            <input type="text" name="phone" value="{{$reservation->tel_number}}" class="form-control" id="inputEmail3" placeholder="phone">
                                                         </div>
                                                     </div>
                                                     <div class="row mb-3">
                                                         <label for="inputEmail3" class="col-sm-3 col-form-label">Date</label>
                                                         <div class="col-sm-9">
-                                                            <input type="date" name="date" class="form-control" id="inputEmail3" placeholder="date">
+                                                            <input type="date" name="date" value="{{$reservation->res_date}}" class="form-control" id="inputEmail3" placeholder="date">
                                                         </div>
                                                     </div>
                                                     <div class="row mb-3">
                                                         <label for="inputEmail3" class="col-sm-3 col-form-label">Table no</label>
                                                         <div class="col-sm-9">
-                                                            <input type="text" name="table" class="form-control" id="inputEmail3" placeholder="table">
+                                                            <input type="text" name="table" value="{{$reservation->table_id}}" class="form-control" id="inputEmail3" placeholder="table">
                                                         </div>
                                                     </div>
                                                     <div class="row mb-3">
                                                         <label for="inputEmail3" class="col-sm-3 col-form-label">guest no</label>
                                                         <div class="col-sm-9">
-                                                            <input type="text" name="guest" class="form-control" id="inputEmail3" placeholder="guest no">
+                                                            <input type="text" name="guest" value="{{$reservation->guest_number}}" class="form-control" id="inputEmail3" placeholder="guest no">
                                                         </div>
                                                     </div>
 

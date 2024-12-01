@@ -70,8 +70,8 @@ class ReservationController extends Controller
      */
     public function edit(Reservation $reservation)
     {
-        $reserves = Reservation::all();
-        return view('backend.reservation.edit',compact('reserves'));
+        // $reserves = Reservation::all();
+        return view('backend.reservation.edit',compact('reservation'));
     }
 
     /**
@@ -90,19 +90,15 @@ class ReservationController extends Controller
         ]
         );
 
+        $reservation->first_name = $request->fname;
+        $reservation->last_name = $request->lname;
+        $reservation->email = $request->email;
+        $reservation->tel_number = $request->phone;
+        $reservation->res_date = $request->date;
+        $reservation->table_id = $request->table;
+        $reservation->guest_number = $request->guest;
 
-
-        $res =new Reservation;
-
-        $res->first_name = $request->fname;
-        $res->last_name = $request->lname;
-        $res->email = $request->email;
-        $res->tel_number = $request->phone;
-        $res->res_date = $request->date;
-        $res->table_id = $request->table;
-        $res->guest_number = $request->guest;
-
-        $res->update();
+        $reservation->update();
         return redirect()->route('reservation.index')->with('msg', "Successfully Create");
     }
 
