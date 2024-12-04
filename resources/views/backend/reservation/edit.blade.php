@@ -55,6 +55,15 @@
                                             <div class="card-body">
                                                 <h4 class="header-title mb-3">Horizontal form</h4>
 
+
+                                @php
+                                    $item = strtotime($reservation->res_date);
+
+                                     $date =date("m / j /Y" , $item);
+
+
+                                @endphp
+
                                                 <form role="form" action="{{route('reservation.update', $reservation->id)}}" method="post">
                                                     @csrf
                                                     @method('PUT')
@@ -85,7 +94,7 @@
                                                     <div class="row mb-3">
                                                         <label for="inputEmail3" class="col-sm-3 col-form-label">Date</label>
                                                         <div class="col-sm-9">
-                                                            <input type="date" name="date" value="{{$reservation->res_date}}" class="form-control" id="inputEmail3" placeholder="date">
+                                                            <input type="date" name="date" value="{{$date}}" class="form-control" id="inputEmail3" placeholder="date">
                                                         </div>
                                                     </div>
                                                     <div class="row mb-3">

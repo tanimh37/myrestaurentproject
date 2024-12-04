@@ -107,6 +107,7 @@ class ReservationController extends Controller
      */
     public function destroy(Reservation $reservation)
     {
-        //
+        $reservation->delete();
+        return redirect()->route('reservation.index')->with('msg', 'Delete Successfully' );
     }
 }

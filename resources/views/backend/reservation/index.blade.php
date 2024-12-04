@@ -108,6 +108,7 @@
                                 <td>
 
 
+
                                     <form action="{{route('reservation.destroy',$reserv->id)}}" method="post">
                                         <a href="{{route('reservation.show',$reserv->id)}}" class="btn btn-success">Show</a>
                                         <a href="{{route('reservation.edit',$reserv->id)}}" class="btn btn-info">Edit</a>
